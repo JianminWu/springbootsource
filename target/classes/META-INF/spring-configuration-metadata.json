@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "my.context",
+      "type": "com.cdt.autoconfig.MyContextProperties",
+      "sourceType": "com.cdt.autoconfig.MyContextProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "my.context.content",
+      "type": "java.lang.String",
+      "sourceType": "com.cdt.autoconfig.MyContextProperties"
+    },
+    {
+      "name": "my.context.context",
+      "type": "java.lang.String",
+      "sourceType": "com.cdt.autoconfig.MyContextProperties"
+    },
+    {
+      "name": "my.context.enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.cdt.autoconfig.MyContextProperties"
+    }
+  ],
+  "hints": []
+}
