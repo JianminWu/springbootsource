@@ -1,10 +1,12 @@
 package com.cdt.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.cdt.annotation.CountMetric;
 import com.cdt.autoconfig.MyContextConfig;
 import com.cdt.dto.BaseResult;
 import com.cdt.dto.PersonDto;
 import com.cdt.service.PersonService;
+import com.cdt.util.QueryRequest;
 import com.cdt.validation.CRUDGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -41,16 +43,17 @@ public class PersonController {
     }
 
     @PostMapping("/update")
-    public BaseResult update(@RequestBody @Validated(CRUDGroup.UPDATE.class)  PersonDto personDto) {
+    public BaseResult update(@RequestBody @Validated(CRUDGroup.UPDATE.class) PersonDto personDto) {
         return new BaseResult(personService.update(personDto));
     }
 
     // 测试自动springboot 自动配置功能
     @Autowired
     MyContextConfig contextConfig;
-    @GetMapping("/test1")
 
-    public BaseResult test1(){
+    @GetMapping("/test1")
+    public BaseResult test1(QueryRequest queryRequest) {
+        System.out.println(JSON.toJSONString(queryRequest));
         return new BaseResult(contextConfig);
     }
 }

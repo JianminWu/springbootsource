@@ -1,10 +1,14 @@
 package com.cdt.cache.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cdt.cache.entity.Dept;
 import com.cdt.cache.service.IDeptService;
+import com.cdt.util.QueryRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p>
@@ -41,4 +45,15 @@ public class DeptController {
     private void delete(@PathVariable("id") Long id) {
         deptService.removeById(id);
     }
+
+    @GetMapping("/findList")
+    private List<Dept> findList(QueryRequest request){
+        return deptService.findList(request);
+    }
+
+    @GetMapping("/findPage")
+    private Page<Dept> findPage(QueryRequest request){
+        return deptService.findPage(request);
+    }
+
 }

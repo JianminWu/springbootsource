@@ -17,10 +17,6 @@ spring:
     port: 5672
 
 my:
-  custom:
-    enable: true
-    name: jim
-    pwd: test
   context:
     enable: true
     content: content

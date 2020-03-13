@@ -1,7 +1,6 @@
 package com.cdt.test;
 
 import com.cdt.cache.entity.Dept;
-import com.cdt.cache.mapper.DeptMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
